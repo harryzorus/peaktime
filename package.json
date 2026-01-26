@@ -1,0 +1,92 @@
+{
+	"name": "peaktime",
+	"version": "0.2.0",
+	"description": "Sun calculations, GPX parsing, and time estimation for hiking, cycling, and trail running adventures",
+	"license": "Apache-2.0",
+	"author": "Harry Tummalacherla",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/harryzorus/peaktime.git"
+	},
+	"keywords": [
+		"sun",
+		"sunrise",
+		"sunset",
+		"gpx",
+		"hiking",
+		"cycling",
+		"running",
+		"trail",
+		"outdoor",
+		"planning",
+		"golden-hour",
+		"blue-hour",
+		"ftp",
+		"gap"
+	],
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./sun": {
+			"types": "./dist/sun/index.d.ts",
+			"import": "./dist/sun/index.js"
+		},
+		"./gpx": {
+			"types": "./dist/gpx/index.d.ts",
+			"import": "./dist/gpx/index.js"
+		},
+		"./hike": {
+			"types": "./dist/hike/index.d.ts",
+			"import": "./dist/hike/index.js"
+		},
+		"./bike": {
+			"types": "./dist/bike/index.d.ts",
+			"import": "./dist/bike/index.js"
+		},
+		"./run": {
+			"types": "./dist/run/index.d.ts",
+			"import": "./dist/run/index.js"
+		},
+		"./common": {
+			"types": "./dist/common/index.d.ts",
+			"import": "./dist/common/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"src"
+	],
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:unit": "vitest run tests/unit",
+		"test:property": "vitest run tests/property",
+		"test:calibration": "vitest run tests/calibration",
+		"check": "tsc --noEmit",
+		"lint": "biome check src/ tests/",
+		"lint:fix": "biome check --write src/ tests/",
+		"format": "biome format --write src/ tests/"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.2",
+		"fast-check": "^3.15.0",
+		"jsdom": "^25.0.0",
+		"typescript": "^5.7.0",
+		"vitest": "^2.1.0"
+	},
+	"peerDependencies": {
+		"jsdom": ">=20.0.0"
+	},
+	"peerDependenciesMeta": {
+		"jsdom": {
+			"optional": true
+		}
+	}
+}
